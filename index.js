@@ -24,7 +24,7 @@ app.use(express.urlencoded({extended: true}));
 const ciudadesAPI =require('./rutas/ciudades')
 ciudadesAPI(app)
 
-app.use(express.static('public'), cors(corsOptions))
+app.use(express.static('public'))
 
 
 // Iniciar servidor
