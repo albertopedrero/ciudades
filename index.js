@@ -24,5 +24,5 @@ app.use(express.static('public'), cors(corsOptions))
 
 // Iniciar servidor
 var server = app.listen(PORT, () => {
-    console.log(`servidor escuchando en ${server.address().port}`)
+    console.log(`mi app está escuchando en ${server.address().port}`)
 })
