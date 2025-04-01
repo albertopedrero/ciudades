@@ -5,12 +5,17 @@ const cors = require("cors");
 require("dotenv").config();
 const PORT = process.env.PORT || 3000;
 
-var corsOptions = { 
+/*var corsOptions = { 
     origin: 'http://api.openweathermap.org/*',
     optionsSuccessStatus: 200
-}
+}*/
 // Middlewares
-app.use(cors(corsOptions));
+app.use(cors({
+    origin: '*', // Permite todas las solicitudes (no recomendado en producción)
+    methods: 'GET,POST,PUT,DELETE',
+    allowedHeaders: 'Content-Type,Authorization'
+  }));
+//app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
